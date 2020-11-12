@@ -6,7 +6,7 @@ Decs ：
 """
 import os
 import shutil
-# from sklearn.decomposition import PCA
+from sklearn.decomposition import PCA
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -95,7 +95,7 @@ if __name__ == '__main__':
     # pcaClf.fit(data)
     # data = pcaClf.transform(data)  # 降低维度 展示效果
     my_centroids, clust_assing = kmeans(data, k)
-    # show_result(data, k, my_centroids, clust_assing)
+    show_result(data, k, my_centroids, clust_assing)
 
     pd.DataFrame(my_centroids).to_csv(centroid_csv, index=False, header=False)
     pd.DataFrame(clust_assing).to_csv(clust_csv, index=False, header=False)
@@ -106,4 +106,4 @@ if __name__ == '__main__':
         img_path = os.path.join(dir, img_list[l])
         name_str = img_path[-14:-8]
         print(img_path, label[l])
-        shutil.copy(img_path, './pic/dc/k=' + str(k)+'/' + str(int(label[l])) + '/' + str(name_str) + '.jpg')
+        shutil.copy(img_path, './pic/kms/k=' + str(k)+'/' + str(int(label[l])) + '/' + str(name_str) + '.jpg')

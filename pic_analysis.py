@@ -84,11 +84,11 @@ if __name__ == '__main__':
         print(name_str)
         
         rect_feature, img = flame_rect(image, name_str)
-        # pd.DataFrame(rect_feature).to_csv(rect_csv, mode='a', index=False, header=False)
+        pd.DataFrame(rect_feature).to_csv(rect_csv, mode='a', index=False, header=False)
         cv2.imwrite("./pic/rect/" + str(name_str) + ".jpg", img)
-        cv2.imshow(name_str, img)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+        # cv2.imshow(name_str, img)
+        # cv2.waitKey(0)
+        # cv2.destroyAllWindows()
 
     col = ["name", "rect0_area", "rect0_x", "rect0_y", "rect0_height", "rect0_width", "rect0_angle",
            "rect1_area,", "rect1_x", "rect1_y", "rect1_height", "rect1_width", "rect1_angle",
