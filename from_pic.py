@@ -14,7 +14,7 @@ import pandas as pd
 # from PIL import Image
 
 
-# img_path = "./pic/20200904_005627/20200904_005627_10s/20200904_005627.mp4_000000.006.jpg"
+# img_path = "./pic/target/20200904_005627.mp4_000000.006.jpg"
 # img = Image.open(img_path)
 # # img.show()
 # gray = img.convert('L')  # 转换成灰度
@@ -103,9 +103,9 @@ def flame_front(img_path, name_str):
                 q.append(contours[m][j][n][1])
                 # cv2.circle(image, (contours[m][j][i][0], contours[m][j][i][1]), 2, (0, 255, 0), 3)
 
-    cv2.drawContours(image, contours, -1, (225, 225, 0), 2)
-    cv2.line(image, (0, int(np.mean(q))), (image.shape[1], int(np.mean(q))), (0, 0, 255), 2, 4)
-    cv2.imwrite("./doc/target/flame_front/" + str(name_str) + ".jpg", image)
+    # cv2.drawContours(image, contours, -1, (225, 225, 0), 2)
+    # cv2.line(image, (0, int(np.mean(q))), (image.shape[1], int(np.mean(q))), (0, 0, 255), 2, 4)
+    # cv2.imwrite("./pic/flame_front/" + str(name_str) + ".jpg", image)
 
     return np.hstack([str(name_str), np.mean(q)]).reshape(1, -1)
 
